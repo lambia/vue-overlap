@@ -1,5 +1,5 @@
 <template>
-    <div class="cell">{{data}}</div>
+    <span class="cell">{{data}}</span>
 </template>
 
 <script>

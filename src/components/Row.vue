@@ -14,10 +14,7 @@ export default {
     },
     components: {
         Cell
-    },
-    data: () => ({}),
-    created() {},
-    methods: {}
+    }
 };
 </script>
 

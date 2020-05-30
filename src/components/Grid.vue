@@ -1,6 +1,6 @@
 <template>
-    <div id="grid" v-if="rows.length">
-        <!-- <Row v-for="(row, key) in rows" :key="key" :data="row" /> -->
+    <div id="grid">
+        <Row v-for="(row, key) in data" :key="key" :data="row" />
     </div>
 </template>
 
@@ -13,86 +13,48 @@ export default {
         Row
     },
     data: () => ({
-        datas: [
-            "00112233445566778899",
-            "aabbccddeeffgghhjjkk",
-            "00112233445566778899",
-            "aabbccddeeffgghhjjkk"
-        ],
-        data:
+        base:
             "00112233445566778899aabbccddeeffgghhjjkk00112233445566778899aabbccddeeffgghhjjkk",
-        rows: []
+        data: []
     }),
     created() {
-        this.splitData();
+        this.createMatrix();
     },
     updated() {
-        this.splitData();
+        this.createMatrix();
     },
     methods: {
-        splitString(data, chunkSize) {
-            let chunks = [];
+        splitData(data, rowSize, cellSize) {
+            //jsPerf -> 86% faster than other low-level code (much faster than .map o regex)
+            //https://jsperf.com/string-to-matrix
+            let rowsCount = data.length / rowSize;
+            let result = [];
 
-            for (let c = 0; c < data.length; c += chunkSize) {
-                chunks.push(data.substring(c, c + chunkSize));
-            }
+            for (let y = 0; y < rowsCount; y++) {
+                let yy = y * rowSize;
+                let row = data.substring(yy, yy + rowSize);
+                let rowLength = row.length;
 
-            return chunks;
-        },
-        splitString2D(data, chunkSizeY, chunkSizeX) {
-            let chunks = [];
-            let write = { x: 0, y: 0 };
-            let read = 0;
-
-            while (read < data.length) {
-                const element = data.substring(read, read + chunkSizeX);
-
-                if (!chunks[write.y]) {
-                    chunks[write.y] = [];
-                }
-                chunks[write.y][write.x] = element;
-
-                if (write.x < chunkSizeY / chunkSizeX - 1) {
-                    write.x++;
-                } else {
-                    write.x = 0;
-                    write.y++;
+                if (!result[y]) {
+                    result[y] = [];
                 }
 
-                read += chunkSizeX;
+                for (let x = 0; x * cellSize < rowLength; x++) {
+                    let xx = x * cellSize;
+                    result[y][x] = row.substring(xx, xx + cellSize);
+                }
             }
-
-            return chunks;
+            return result;
         },
-        splitData() {
+        createMatrix() {
             let rowSize = 20;
             let cellSize = 2;
-
-            let rows = this.splitString(this.data, rowSize);
-            let final = [];
-
-            for (let c = 0; c < rows.length; c++) {
-                final.push(this.splitString(rows[c], cellSize));
-            }
-
-            final = this.splitString2D(this.data, 20, 2);
-
-            //For each element in the array (= for each row)
-            // let rowsCount = this.data.length;
-            // for (let row = 0; row < rowsCount; row++) {
-            //     //For each n-elements in the string (= for each cell)
-            //     let rowLength = this.data[row].length;
-            //     for (let i = 0; i < rowLength; i += cellSize) {
-            //         this.rows[0][i] = this.data[row].substring(i, i + cellSize);
-            //     }
-            // }
-            console.log(final);
+            this.data = this.splitData(this.base, rowSize, cellSize);
         }
     }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 #grid {
     padding: 10px;
