@@ -6,7 +6,8 @@ export default {
     Vue.prototype.$res = options.$res;
 
     //ToDev: funzione per cambio lingua con callback customizzabile (es. vuetify)
-    //ToDev: test per risorse in array e in array di oggetti per uso in v-for
+    //ToDev: benchmark require in (globals vs in lang.js)
+    //ToDev: require per oggetti e array se typeof===string
     //ToDev: integrare queste modifiche su vuetify-frontend
 
     Vue.prototype.$eventBus = new Vue();
