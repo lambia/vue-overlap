@@ -1,11 +1,26 @@
-Test with most common block sizes
-Colorpicker + 3x textarea (file > block > cell)
-Center with fixed margin instead of space-around
-While click: select
-Cell state (and css) for selected
-Cell fontsize and fontfamily, from options
-Cell colors from state/stats
-Known values (in toolbox or cell dropdown?)
-Slider for navigation
+Funzionalità vista singola
+- Grid keepalive
+- While click: select
+- Cell state (and css) for selected
+- Copy and paste on same row
+- Settings for filetype: file size, block number, block size and cell size
+- Settings for view: binary, octet, hex, ascii, unicode ecc..
+- Save notes, color schema and settings
+- Create area
 
-File list and upload
+Funzionalità vista multipla
+- Filelist and upload
+- Known values (in toolbox or cell dropdown?)
+- Slider for navigation
+- Heatmap
+
+Layout
+- Compare with nGordo grid or fix borders
+- 4x textarea (file > block > area > cell)
+- Colorpicker
+- Test with most common block sizes
+
+Computed layout
+- Cell colors from [schema, stats, state] = [saved color, heatmap, hover/selected]
+- Cell fontsize and fontfamily, from options
+- Layout: odd cell number  (fix align center, fix fake border)

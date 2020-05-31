@@ -20,8 +20,20 @@ export default {
 
 <style scoped lang="scss">
 .row {
-    padding-bottom: 0.5em;
     display: flex;
-    justify-content: space-evenly; /* meglio safe center per compatibilità */
+    justify-content: center;
+}
+
+/* todo: function from saved color */
+.cell {
+    border-left: solid 1px #555;
+    border-top: solid 1px #555;
+    color: #ddd;
+}
+.cell:last-of-type {
+    border-right: solid 1px #555;
+}
+.row:last-of-type .cell {
+    border-bottom: solid 1px #555;
 }
 </style>

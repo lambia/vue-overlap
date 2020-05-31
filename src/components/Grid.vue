@@ -13,17 +13,22 @@ export default {
         Row
     },
     data: () => ({
-        base:
-            "00112233445566778899aabbccddeeffgghhjjkk00112233445566778899aabbccddeeffgghhjjkk",
+        base: "",
         data: []
     }),
     created() {
+        this.createData(16 * 2 * 16 * 4);
         this.createMatrix();
     },
     updated() {
         this.createMatrix();
     },
     methods: {
+        createData(len) {
+            for (let i = 0; i < len; ++i) {
+                this.base += Math.floor(Math.random() * 16).toString(16);
+            }
+        },
         splitData(data, rowSize, cellSize) {
             //jsPerf -> 86% faster than other low-level code (much faster than .map o regex)
             //https://jsperf.com/string-to-matrix
@@ -47,7 +52,7 @@ export default {
             return result;
         },
         createMatrix() {
-            let rowSize = 20;
+            let rowSize = 32;
             let cellSize = 2;
             this.data = this.splitData(this.base, rowSize, cellSize);
         }
