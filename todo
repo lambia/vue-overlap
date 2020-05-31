@@ -1,0 +1,11 @@
+Test with most common block sizes
+Colorpicker + 3x textarea (file > block > cell)
+Center with fixed margin instead of space-around
+While click: select
+Cell state (and css) for selected
+Cell fontsize and fontfamily, from options
+Cell colors from state/stats
+Known values (in toolbox or cell dropdown?)
+Slider for navigation
+
+File list and upload

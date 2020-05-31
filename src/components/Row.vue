@@ -19,7 +19,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#toolbox {
-    padding: 10px;
+.row {
+    padding-bottom: 0.5em;
+    display: flex;
+    justify-content: space-evenly; /* meglio safe center per compatibilità */
 }
 </style>

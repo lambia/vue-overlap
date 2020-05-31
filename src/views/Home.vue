@@ -24,7 +24,7 @@ export default {
     font-size: 14px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: safe space-evenly; /* meglio safe center per compatibilità */
+    justify-content: space-evenly; /* meglio safe center per compatibilità */
     align-items: stretch;
     align-content: stretch;
 }
