@@ -1,4 +1,6 @@
 Funzionalità vista singola
+- Electron (hide menu, change size)
+- Electron hooks (fullscreen, refresh)
 - Grid keepalive
 - While click: select
 - Cell state (and css) for selected
@@ -15,6 +17,7 @@ Funzionalità vista multipla
 - Heatmap
 
 Layout
+- Toolbar (row or fixed column)
 - Compare with nGordo grid or fix borders
 - 4x textarea (file > block > area > cell)
 - Colorpicker
