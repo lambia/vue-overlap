@@ -35,7 +35,7 @@ export default {
     // flex-grow: 3;
     display: inline-block;
     padding: 10px;
-    widthto: 530px;
+    width: 530px;
     float: left;
 }
 #toolbox {
