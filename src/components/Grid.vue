@@ -1,6 +1,8 @@
 <template>
     <div id="grid">
-        <Row v-for="(row, key) in data" :key="key" :data="row" />
+        <table>
+            <Row v-for="(row, key) in data" :key="key" :data="row" />
+        </table>
     </div>
 </template>
 
@@ -63,5 +65,16 @@ export default {
 <style scoped lang="scss">
 #grid {
     padding: 10px;
+}
+
+#grid table {
+    border-collapse: collapse;
+}
+</style>
+<style lang="scss">
+#grid td {
+    //ToDo: function from saved color
+    border: solid 1px #555;
+    color: #ddd;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-    <!-- <span class="cellWrapper"> -->
-    <span class="cell">{{data}}</span>
-    <!-- </span> -->
+    <td>
+        <span class="cell">{{data}}</span>
+    </td>
 </template>
 
 <script>
