@@ -1,14 +1,15 @@
 Funzionalità vista singola
-- Electron (hide menu, change size)
-- Electron hooks (fullscreen, refresh)
-- Grid keepalive
+
 - While click: select
 - Cell state (and css) for selected
-- Copy and paste on same row
+- Copy and paste (result = one row)
 - Settings for filetype: file size, block number, block size and cell size
 - Settings for view: binary, octet, hex, ascii, unicode ecc..
 - Save notes, color schema and settings
 - Create area
+- Router-view keepalive
+- Electron (change size)
+- Electron hooks (fullscreen, refresh, hide frame and add exit button)
 
 Funzionalità vista multipla
 - Filelist and upload

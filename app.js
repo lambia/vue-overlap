@@ -15,5 +15,6 @@ if (process.env.NODE_ENV === 'development') {
 
 app.on('ready', () => {
     let window = new BrowserWindow({ width: 800, height: 600 })
+    window.removeMenu()
     window.loadURL(url)
 })
