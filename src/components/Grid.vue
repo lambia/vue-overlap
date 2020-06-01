@@ -2,17 +2,22 @@
     <div id="grid">
         <table>
             <tr v-for="(row, rowKey) in data" :key="rowKey">
-                <td v-for="(cell, cellKey) in row" :key="cellKey">
+                <Cell v-for="(cell, cellKey) in row" :key="cellKey" type="td">
                     <span class="cell">{{cell}}</span>
-                </td>
+                </Cell>
             </tr>
         </table>
     </div>
 </template>
 
 <script>
+import Cell from "@/components/Cell.vue";
+
 export default {
     name: "Grid",
+    components: {
+        Cell
+    },
     data: () => ({
         base: "",
         data: []
@@ -65,22 +70,5 @@ export default {
 #grid table {
     border-collapse: collapse;
     // width: 530px;
-}
-
-#grid td {
-    //ToDo: function from saved color
-    border: solid 1px #555;
-    color: #ddd;
-}
-
-.cell {
-    display: inline-block;
-    text-align: center;
-    font-family: monospace; /* source-code-pro or roboto mono */
-    text-transform: uppercase; /* from options */
-    /* Make functions with argument, change class from app */
-    padding: 4px; /*( fontSize / 3) */
-    font-size: 14px; /* fontSize */
-    width: 22px; /* (fontSize * chunkSize) - (fontSize / 3) */
 }
 </style>

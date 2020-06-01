@@ -1,14 +1,15 @@
 Funzionalità vista singola
-- While click: select
-- Cell state (and css) for selected
-- Copy and paste (result = one row)
+- Single select @click --> multiple select while click
+- Css for selected and hover (with alpha on actual color)
 - Settings for filetype: file size, block number, block size and cell size
 - Settings for view: binary, octet, hex, ascii, unicode ecc..
 - Save notes, color schema and settings
 - Create area
 - Remove router-view and replace with v-iffed components
-- Electron (change size)
-- Electron hooks (fullscreen, refresh, hide frame and add exit button)
+- Responsive layout when UI is done
+- Electron (start maximized, hide frame?)
+- Electron hooks (refresh and exit button)
+- Copy and paste (result = one row)
 
 Funzionalità vista multipla
 - Filelist and upload
