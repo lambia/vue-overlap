@@ -6,7 +6,7 @@ Funzionalità vista singola
 - Settings for view: binary, octet, hex, ascii, unicode ecc..
 - Save notes, color schema and settings
 - Create area
-- Router-view keepalive
+- Remove router-view and replace with v-iffed components
 - Electron (change size)
 - Electron hooks (fullscreen, refresh, hide frame and add exit button)
 
